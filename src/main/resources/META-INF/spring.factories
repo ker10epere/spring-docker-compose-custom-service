@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.service.connection.ConnectionDetailsFactory=\
+com.with.integrity.servicedockercompose.services.actuator.docker.ActuatorDockerComposeConnectionDetailsFactory

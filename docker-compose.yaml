@@ -1,0 +1,23 @@
+name: service-docker-compose
+services:
+  postgres:
+    image: 'postgres:14.11-bullseye@sha256:515fd06af54791e2979b8d0bbeed4350731cb68d6741ad6198688935388c88bb'
+    environment:
+      - 'POSTGRES_DB=postgres'
+      - 'POSTGRES_PASSWORD=postgres'
+      - 'POSTGRES_USER=postgres'
+    ports:
+      - '5432'
+
+  actuator_webapp:
+    container_name: actuator_webapp
+    build: https://github.com/ker10epere/spring-actuator.git
+    pull_policy: never
+    volumes:
+      - m2:/root/.m2
+    ports:
+      - 8080
+
+volumes:
+  m2:
+    name: m2
