@@ -6,7 +6,9 @@ import org.springframework.boot.docker.compose.service.connection.DockerComposeC
 
 public class ActuatorDockerComposeConnectionDetailsFactory extends DockerComposeConnectionDetailsFactory<ActuatorConnectionDetails> {
     protected ActuatorDockerComposeConnectionDetailsFactory() {
-        super("service-docker-compose-actuator_webapp");
+        // ConnectionName MUST BE TAKEN FROM IMAGE NAME, TAG NOT INCLUDED
+        // docker container ls -a --format "table {{ .Image }}"
+        super("ker10epere/spring-actuator");
     }
 
     @Override
