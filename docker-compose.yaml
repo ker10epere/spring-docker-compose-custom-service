@@ -9,15 +9,15 @@ services:
     ports:
       - '5432'
 
-  actuator_webapp:
+  #  actuator_build_from_git:
+  #    container_name: actuator_webapp
+  #    build: https://github.com/ker10epere/spring-actuator.git
+  #    pull_policy: build
+  #    ports:
+  #      - 8080
+
+  actuator_pull_from_docker_hub:
     container_name: actuator_webapp
-    build: https://github.com/ker10epere/spring-actuator.git
-    pull_policy: build
-    volumes:
-      - m2:/root/.m2
+    image: ker10epere/spring-actuator:0.0.1
     ports:
       - 8080
-
-volumes:
-  m2:
-    name: m2
