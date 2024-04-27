@@ -12,7 +12,7 @@ services:
   actuator_webapp:
     container_name: actuator_webapp
     build: https://github.com/ker10epere/spring-actuator.git
-    pull_policy: never
+    pull_policy: build
     volumes:
       - m2:/root/.m2
     ports:
